@@ -34,9 +34,24 @@ const Index = () => {
     } catch {}
   }, []);
 
+  const [noMatch, setNoMatch] = useState(false);
+
   const handleMoodSubmit = (input: string) => {
     setMood(input);
-    setPool(shuffleArray(allMovies));
+    const keyword = input.trim().toLowerCase();
+    const matched = allMovies.filter((m) =>
+      m.tags.some((tag) => keyword.includes(tag))
+    );
+    if (matched.length > 0) {
+      setNoMatch(false);
+      // Pad to at least 5 cards by adding random unmatched movies
+      const rest = shuffleArray(allMovies.filter((m) => !matched.includes(m)));
+      const combined = [...shuffleArray(matched), ...rest].slice(0, Math.max(5, matched.length));
+      setPool(combined);
+    } else {
+      setNoMatch(true);
+      setPool(shuffleArray(allMovies));
+    }
     setView("swipe");
   };
 
@@ -73,6 +88,7 @@ const Index = () => {
             key="swipe"
             movies={pool}
             onComplete={handleSwipeComplete}
+            noMatchHint={noMatch}
           />
         )}
         {view === "result" && (

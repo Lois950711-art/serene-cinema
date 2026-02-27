@@ -8,6 +8,7 @@ export interface Movie {
   conflict: string;
   recommendation: string;
   genre: string;
+  tags: string[];
 }
 
 export const movies: Movie[] = [
@@ -17,10 +18,11 @@ export const movies: Movie[] = [
     titleEn: "Into the Wild",
     rating: 8.6,
     year: 2007,
-    poster: "https://image.tmdb.org/t/p/w500/2tecNMOisXlyMfQsBI0fSCBKmYR.jpg",
+    poster: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=900&fit=crop",
     conflict: "一个放弃一切走向荒野的年轻人，在自由与生存之间做出终极抉择。",
     recommendation: "当你厌倦了城市的喧嚣，这部电影会让你重新审视自由的代价。",
     genre: "公路 / 冒险",
+    tags: ["公路", "冒险", "自由", "荒野"],
   },
   {
     id: 2,
@@ -28,10 +30,11 @@ export const movies: Movie[] = [
     titleEn: "Easy Rider",
     rating: 7.3,
     year: 1969,
-    poster: "https://image.tmdb.org/t/p/w500/mmGEB6ly9OG0CxVcOBCu0dCFOYq.jpg",
+    poster: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&h=900&fit=crop",
     conflict: "两个骑士追寻美国梦的旅途，却撞上了社会偏见的铁壁。",
     recommendation: "关于自由最纯粹的表达，每一帧都是风的味道。",
     genre: "公路 / 剧情",
+    tags: ["公路", "自由", "剧情", "经典"],
   },
   {
     id: 3,
@@ -39,10 +42,11 @@ export const movies: Movie[] = [
     titleEn: "Thelma & Louise",
     rating: 8.2,
     year: 1991,
-    poster: "https://image.tmdb.org/t/p/w500/xBKGJQsAIeweesB79o17RAf7Mop.jpg",
+    poster: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=900&fit=crop",
     conflict: "两位女性的逃亡之路，在法律与尊严之间选择了纵身一跃。",
     recommendation: "那一刻的放手，是她们给自己最好的礼物。",
     genre: "公路 / 犯罪",
+    tags: ["公路", "犯罪", "女性", "自由"],
   },
   {
     id: 4,
@@ -50,10 +54,11 @@ export const movies: Movie[] = [
     titleEn: "Rain Man",
     rating: 8.7,
     year: 1988,
-    poster: "https://image.tmdb.org/t/p/w500/jmqe3bGsXJhHPFnm8GQzPlkJVpF.jpg",
+    poster: "https://images.unsplash.com/photo-1494783367193-149034c05e8f?w=600&h=900&fit=crop",
     conflict: "一段公路旅途揭开了兄弟之间金钱与亲情的深层博弈。",
     recommendation: "有些亲情需要走很远的路，才能真正靠近彼此。",
     genre: "公路 / 剧情",
+    tags: ["公路", "剧情", "亲情", "治愈"],
   },
   {
     id: 5,
@@ -61,10 +66,11 @@ export const movies: Movie[] = [
     titleEn: "On the Road",
     rating: 6.8,
     year: 2012,
-    poster: "https://image.tmdb.org/t/p/w500/jkMSCAGoAHPSp3OQ0t9BLDiBGwf.jpg",
+    poster: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=900&fit=crop",
     conflict: "垮掉的一代在路上寻找意义，却在放纵中迷失了方向。",
     recommendation: "路的尽头什么都没有，但路本身就是全部。",
     genre: "公路 / 文艺",
+    tags: ["公路", "文艺", "自由"],
   },
   {
     id: 6,
@@ -72,10 +78,11 @@ export const movies: Movie[] = [
     titleEn: "Green Book",
     rating: 8.9,
     year: 2018,
-    poster: "https://image.tmdb.org/t/p/w500/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg",
+    poster: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=900&fit=crop",
     conflict: "黑人钢琴家与白人司机穿越种族隔离的南方，偏见与友情交锋。",
     recommendation: "改变世界太难，但改变一个人的心，一趟旅途就够了。",
     genre: "公路 / 传记",
+    tags: ["公路", "传记", "治愈", "友情"],
   },
   {
     id: 7,
@@ -83,10 +90,11 @@ export const movies: Movie[] = [
     titleEn: "Kikujirō no Natsu",
     rating: 8.8,
     year: 1999,
-    poster: "https://image.tmdb.org/t/p/w500/vfUDCAxlgkwPmSm5OD1dOOsFzBq.jpg",
+    poster: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=900&fit=crop",
     conflict: "一个不靠谱的大叔带着小男孩寻母，温柔藏在粗糙之下。",
     recommendation: "夏天、蝉鸣、和一个笨拙却温暖的大人。",
     genre: "公路 / 喜剧",
+    tags: ["公路", "治愈", "喜剧", "温暖"],
   },
   {
     id: 8,
@@ -94,10 +102,11 @@ export const movies: Movie[] = [
     titleEn: "The Secret Life of Walter Mitty",
     rating: 8.3,
     year: 2013,
-    poster: "https://image.tmdb.org/t/p/w500/nU4VGesliQzMjbgNrPHMaKAkVFo.jpg",
+    poster: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=900&fit=crop",
     conflict: "一个平凡白日梦者踏上真实冒险，在虚幻与现实间找到自我。",
     recommendation: "生活的意义，在于走出去亲眼看见。",
     genre: "冒险 / 剧情",
+    tags: ["冒险", "剧情", "治愈", "励志"],
   },
   {
     id: 9,
@@ -105,10 +114,11 @@ export const movies: Movie[] = [
     titleEn: "The Motorcycle Diaries",
     rating: 8.2,
     year: 2004,
-    poster: "https://image.tmdb.org/t/p/w500/hsbeTxaaJJMsNPXJPoBMqEFWmPo.jpg",
+    poster: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=900&fit=crop",
     conflict: "年轻的切·格瓦拉在南美大地上目睹贫穷，理想主义被现实点燃。",
     recommendation: "改变世界之前，先让世界改变你。",
     genre: "公路 / 传记",
+    tags: ["公路", "传记", "冒险", "历史"],
   },
   {
     id: 10,
@@ -116,9 +126,10 @@ export const movies: Movie[] = [
     titleEn: "Little Forest",
     rating: 9.0,
     year: 2018,
-    poster: "https://image.tmdb.org/t/p/w500/1ZKzEB6tGOVfjIsXePVSrPif8CP.jpg",
+    poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=900&fit=crop",
     conflict: "逃离都市回到乡村的女孩，在四季轮转中与自己和解。",
     recommendation: "有时候，一碗热汤就能治愈所有的不安。",
     genre: "治愈 / 美食",
+    tags: ["治愈", "美食", "田园", "文艺"],
   },
 ];
