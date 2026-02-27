@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { RotateCcw } from "lucide-react";
 import type { Movie } from "@/data/movies";
+import MoviePoster from "@/components/MoviePoster";
 
 interface ResultListProps {
   movies: Movie[];
@@ -59,13 +60,12 @@ const ResultList = ({ movies, onRestart }: ResultListProps) => {
             className="group flex gap-6 overflow-hidden rounded-2xl bg-card p-4 shadow-card transition-shadow duration-300 hover:shadow-card-hover"
           >
             {/* Poster */}
-            <div className="w-28 flex-shrink-0 overflow-hidden rounded-xl">
-              <img
-                src={movie.poster}
-                alt={movie.title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
+            <MoviePoster
+              src={movie.poster}
+              title={movie.title}
+              className="w-28 flex-shrink-0 rounded-xl"
+              imgClassName="transition-transform duration-500 group-hover:scale-105"
+            />
 
             {/* Info */}
             <div className="flex flex-1 flex-col justify-center space-y-2 py-1">

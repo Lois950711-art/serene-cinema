@@ -12,8 +12,8 @@ export interface Movie {
 }
 
 function posterUrl(titleEn: string): string {
-  const encoded = encodeURIComponent(titleEn);
-  return `https://image.pollinations.ai/prompt/Cinematic%20movie%20poster%20for%20${encoded}?width=600&height=900&nologo=true`;
+  const promptText = `Cinematic movie poster for ${titleEn}`;
+  return `https://image.pollinations.ai/prompt/${encodeURIComponent(promptText)}?width=600&height=900&nologo=true`;
 }
 
 export const movies: Movie[] = [
