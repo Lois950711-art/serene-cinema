@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
 import { X, Heart } from "lucide-react";
 import type { Movie } from "@/data/movies";
+import MoviePoster from "@/components/MoviePoster";
 
 interface SwipeCardsProps {
   movies: Movie[];
@@ -73,14 +74,11 @@ const MovieCard = ({
         </motion.div>
 
         {/* Poster */}
-        <div className="aspect-[2/3] w-full overflow-hidden">
-          <img
-            src={movie.poster}
-            alt={movie.title}
-            className="h-full w-full object-cover"
-            draggable={false}
-          />
-        </div>
+        <MoviePoster
+          src={movie.poster}
+          title={movie.title}
+          className="aspect-[2/3] w-full"
+        />
 
         {/* Info */}
         <div className="space-y-2 p-5">
