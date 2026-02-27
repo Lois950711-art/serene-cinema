@@ -6,6 +6,7 @@ import type { Movie } from "@/data/movies";
 interface SwipeCardsProps {
   movies: Movie[];
   onComplete: (liked: Movie[]) => void;
+  noMatchHint?: boolean;
 }
 
 const SWIPE_THRESHOLD = 120;
@@ -99,7 +100,7 @@ const MovieCard = ({
   );
 };
 
-const SwipeCards = ({ movies, onComplete }: SwipeCardsProps) => {
+const SwipeCards = ({ movies, onComplete, noMatchHint }: SwipeCardsProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [liked, setLiked] = useState<Movie[]>([]);
   const [exitDir, setExitDir] = useState<"left" | "right">("left");
@@ -134,8 +135,20 @@ const SwipeCards = ({ movies, onComplete }: SwipeCardsProps) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      {/* No-match hint */}
+      {noMatchHint && (
+        <motion.p
+          className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-muted-foreground/70"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          今天暂时没有找到完全匹配的，不如看看这些...
+        </motion.p>
+      )}
+
       {/* Progress */}
-      <div className="absolute top-8 left-1/2 w-48 -translate-x-1/2">
+      <div className={`absolute ${noMatchHint ? 'top-16' : 'top-8'} left-1/2 w-48 -translate-x-1/2`}>
         <div className="h-0.5 w-full rounded-full bg-border">
           <motion.div
             className="h-full rounded-full bg-foreground/30"
